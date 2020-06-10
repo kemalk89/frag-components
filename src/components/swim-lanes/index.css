@@ -1,0 +1,27 @@
+.swim-lanes {
+  display: flex;
+}
+
+swim-lane {
+  flex-grow: 1;
+}
+
+.swim-lane {
+  margin: 5px;
+  padding: 5px;
+  height: 100vh;
+  background-color: rgb(243, 243, 243);
+}
+
+.swim-lane-title {
+  margin: 0;
+  margin-bottom: 10px;
+  color: rgb(95, 95, 95);
+}
+
+.swim-lane-task {
+  background: #fff;
+  border: 1px solid black;
+  padding: 3px;
+  margin-bottom: 5px;
+}

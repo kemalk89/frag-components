@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/webcomponents.esm.js"></script>
+  <script nomodule src="/build/webcomponents.js"></script>
+
+</head>
+<body>
+
+  <swim-lanes></swim-lanes>
+
+  <script>
+    const swimLanes = document.querySelector('swim-lanes');
+    swimLanes.config = {
+      lanes: [
+        { statusId: 1, title: 'Todo' },
+        { statusId: 2, title: 'In Progress' },
+        { statusId: 3, title: 'In Test' },
+        { statusId: 4, title: 'Done' },
+      ],
+      tasks: [
+        { title: 'Task 1', statusId: 1  },
+        { title: 'Task 2', statusId: 1  },
+        { title: 'Task 3', statusId: 2  },
+        { title: 'Task 4', statusId: 2  },
+        { title: 'Task 5', statusId: 2  },
+        { title: 'Task 6', statusId: 4  },
+      ]
+    };
+  </script>
+
+</body>
+</html>
