@@ -7,12 +7,11 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface SwimLane {
+        "cards": any;
+        "columnId": number;
         "laneTitle": string;
-        "statusId": number;
-        "tasks": any;
-    }
-    interface SwimLaneTask {
-        "task": any;
+        "onUpdateCardStatus": any;
+        "renderCardContent": any;
     }
     interface SwimLanes {
         "config": any;
@@ -25,12 +24,6 @@ declare global {
         prototype: HTMLSwimLaneElement;
         new (): HTMLSwimLaneElement;
     };
-    interface HTMLSwimLaneTaskElement extends Components.SwimLaneTask, HTMLStencilElement {
-    }
-    var HTMLSwimLaneTaskElement: {
-        prototype: HTMLSwimLaneTaskElement;
-        new (): HTMLSwimLaneTaskElement;
-    };
     interface HTMLSwimLanesElement extends Components.SwimLanes, HTMLStencilElement {
     }
     var HTMLSwimLanesElement: {
@@ -39,25 +32,22 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "swim-lane": HTMLSwimLaneElement;
-        "swim-lane-task": HTMLSwimLaneTaskElement;
         "swim-lanes": HTMLSwimLanesElement;
     }
 }
 declare namespace LocalJSX {
     interface SwimLane {
+        "cards"?: any;
+        "columnId"?: number;
         "laneTitle"?: string;
-        "statusId"?: number;
-        "tasks"?: any;
-    }
-    interface SwimLaneTask {
-        "task"?: any;
+        "onUpdateCardStatus"?: any;
+        "renderCardContent"?: any;
     }
     interface SwimLanes {
         "config"?: any;
     }
     interface IntrinsicElements {
         "swim-lane": SwimLane;
-        "swim-lane-task": SwimLaneTask;
         "swim-lanes": SwimLanes;
     }
 }
@@ -66,7 +56,6 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "swim-lane": LocalJSX.SwimLane & JSXBase.HTMLAttributes<HTMLSwimLaneElement>;
-            "swim-lane-task": LocalJSX.SwimLaneTask & JSXBase.HTMLAttributes<HTMLSwimLaneTaskElement>;
             "swim-lanes": LocalJSX.SwimLanes & JSXBase.HTMLAttributes<HTMLSwimLanesElement>;
         }
     }

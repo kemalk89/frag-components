@@ -11,25 +11,47 @@
 </head>
 <body>
 
-  <swim-lanes></swim-lanes>
+  <swim-lanes>
+  </swim-lanes>
 
   <script>
     const swimLanes = document.querySelector('swim-lanes');
     swimLanes.config = {
       lanes: [
-        { statusId: 1, title: 'Todo' },
-        { statusId: 2, title: 'In Progress' },
-        { statusId: 3, title: 'In Test' },
-        { statusId: 4, title: 'Done' },
+        { columnId: 1, title: 'Todo' },
+        { columnId: 2, title: 'In Progress' },
+        { columnId: 3, title: 'In Test' },
+        { columnId: 4, title: 'Done' },
       ],
-      tasks: [
-        { title: 'Task 1', statusId: 1  },
-        { title: 'Task 2', statusId: 1  },
-        { title: 'Task 3', statusId: 2  },
-        { title: 'Task 4', statusId: 2  },
-        { title: 'Task 5', statusId: 2  },
-        { title: 'Task 6', statusId: 4  },
-      ]
+      cards: [
+        { id: 1, title: 'Task 1', columnId: 1, type: 'bug'  },
+        { id: 2, title: 'Task 2', columnId: 1 },
+        { id: 3, title: 'Task 3', columnId: 2, type: 'story'  },
+        { id: 4, title: 'Task 4', columnId: 2  },
+        { id: 5, title: 'Task 5', columnId: 2  },
+        { id: 6, title: 'Task 6', columnId: 4  },
+      ],
+      onUpdateCardStatus: ({cardId, newColumnId}) => {
+        setTimeout(() => {
+          const found = swimLanes.config.cards.filter(i => {
+            return i.id === cardId;
+          })[0];
+
+          found.columnId= newColumnId;
+        });
+      },
+      renderCardContent: (item) => {
+        const tpl = `
+          <div>
+            <h4>${item.title}</h4>
+          </div>
+        `;
+
+        const div = document.createElement('div');
+        div.innerHTML = tpl;
+
+        return div.innerHTML;
+      }
     };
   </script>
 

@@ -22,7 +22,11 @@
     "generate": "stencil generate"
   },
   "devDependencies": {
-    "@stencil/core": "^1.12.2"
+    "@stencil/core": "^1.12.2",
+    "@types/sortablejs": "^1.10.4"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "sortablejs": "^1.10.2"
+  }
 }

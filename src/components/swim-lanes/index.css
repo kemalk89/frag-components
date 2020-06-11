@@ -4,13 +4,23 @@
 
 swim-lane {
   flex-grow: 1;
+  min-width: 100px;
 }
 
 .swim-lane {
   margin: 5px;
-  padding: 5px;
-  height: 100vh;
+  padding: 2px;
   background-color: rgb(243, 243, 243);
+  border: 3px dashed rgb(243, 243, 243);;
+}
+
+.swim-lane-droppable {
+  background-color: rgb(92, 165, 92);
+}
+
+.swim-lane-drag-over {
+  background-color: rgb(66, 151, 66);
+  border: 3px dashed green;
 }
 
 .swim-lane-title {
@@ -19,9 +29,14 @@ swim-lane {
   color: rgb(95, 95, 95);
 }
 
-.swim-lane-task {
+.swim-lane-card {
   background: #fff;
-  border: 1px solid black;
   padding: 3px;
   margin-bottom: 5px;
+}
+
+.sortable-ghost {
+  background-color: blue;
+  color: blue;
+  opacity: 0.2;
 }
