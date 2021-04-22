@@ -1,59 +1,27 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
 
-  <script type="module" src="/build/webcomponents.esm.js"></script>
-  <script nomodule src="/build/webcomponents.js"></script>
+    <script type="module" src="/build/component-library.esm.js"></script>
+    <script nomodule src="/build/component-library.js"></script>
 
-</head>
-<body>
-
-  <swim-lanes>
-  </swim-lanes>
-
-  <script>
-    const swimLanes = document.querySelector('swim-lanes');
-    swimLanes.config = {
-      lanes: [
-        { columnId: 1, title: 'Todo' },
-        { columnId: 2, title: 'In Progress' },
-        { columnId: 3, title: 'In Test' },
-        { columnId: 4, title: 'Done' },
-      ],
-      cards: [
-        { id: 1, title: 'Task 1', columnId: 1, type: 'bug'  },
-        { id: 2, title: 'Task 2', columnId: 1 },
-        { id: 3, title: 'Task 3', columnId: 2, type: 'story'  },
-        { id: 4, title: 'Task 4', columnId: 2  },
-        { id: 5, title: 'Task 5', columnId: 2  },
-        { id: 6, title: 'Task 6', columnId: 4  },
-      ],
-      onUpdateCardStatus: ({cardId, newColumnId}) => {
-        setTimeout(() => {
-          const found = swimLanes.config.cards.filter(i => {
-            return i.id === cardId;
-          })[0];
-
-          found.columnId= newColumnId;
-        });
-      },
-      renderCardContent: (item) => {
-        const tpl = `
-          <div>
-            <h4>${item.title}</h4>
-          </div>
-        `;
-
-        const div = document.createElement('div');
-        div.innerHTML = tpl;
-
-        return div.innerHTML;
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
       }
-    };
-  </script>
-
-</body>
+    </style>
+  </head>
+  <body>
+    <app-container />
+    <ul>
+      <li>Halo</li>
+      <li>Test</li>
+    </ul>
+  </body>
 </html>
