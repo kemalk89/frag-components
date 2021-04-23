@@ -1,4 +1,10 @@
 import { Component, Prop, h } from '@stencil/core';
+import { SwimLaneItem, CardItem, UpdateCardStatus, RenderCardContent } from './swim-lane';
+
+export type SwimLaneConfig = {
+  lanes: SwimLaneItem[],
+  cards: CardItem[],
+}
 
 @Component({
   tag: 'swim-lanes',
@@ -6,16 +12,18 @@ import { Component, Prop, h } from '@stencil/core';
 })
 export class SwimLanes {
 
-  @Prop() config: any;
+  @Prop() config: SwimLaneConfig;
+  @Prop() updateCardStatus: UpdateCardStatus;
+  @Prop() renderCardContent: RenderCardContent;
 
   _renderSwimlanes() {
-    const { lanes, cards, onUpdateCardStatus, renderCardContent } = this.config;
+    const { lanes, cards } = this.config;
 
     return lanes.map(lane => {
       return (
           <swim-lane
-            renderCardContent={renderCardContent}
-            onUpdateCardStatus={onUpdateCardStatus}
+            renderCardContent={(card) => this.renderCardContent(card)}
+            updateCardStatus={(newStatus) => this.updateCardStatus(newStatus)}
             columnId={lane.columnId}
             laneTitle={lane.title}
             cards={cards}>
