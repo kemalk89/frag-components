@@ -13,14 +13,68 @@
     <style>
       * {
         font-family: 'Roboto', sans-serif;
+        font-size: 16px;
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-        font-size: 16px;
+      }
+
+      main {
+        padding: 0.5rem 1rem;
       }
     </style>
   </head>
   <body>
-    <app-container />
+    <top-menu></top-menu>
+    <swim-lanes></swim-lanes>
+
+    <script>
+      // Top Menu
+      const topMenu = document.querySelector('top-menu');
+      topMenu.items = [
+        { label: 'Tasks', active: true, click: () => console.log(1) },
+        { label: 'Projects', click: () => console.log(2) },
+        { label: 'Timebookings', click: () => console.log(3) },
+        { label: 'Controlling', click: () => console.log(4) },
+        { label: 'Wiki', click: () => console.log(4) },
+        { label: '', click: () => console.log(4) },
+      ];
+
+      // Swim Lanes
+      const swimLanes = document.querySelector('swim-lanes');
+      swimLanes.config = {
+        lanes: [
+          { columnId: '1', title: 'TODO' },
+          { columnId: '2', title: 'In Progress' },
+          { columnId: '3', title: 'Test' },
+          { columnId: '4', title: 'Review' },
+        ],
+        cards: [
+          { id: '1', columnId: '1', title: 'Feature XY implementieren' }
+        ]
+      };
+      swimLanes.onUpdateCardStatus = ({cardId, newColumnId}) => {
+        setTimeout(() => {
+          const found = swimLanes.config.cards.filter(i => {
+            return i.id === cardId;
+          })[0];
+
+          found.columnId= newColumnId;
+        });
+      };
+
+      swimLanes.renderCardContent = (card) => {
+        const tpl = `
+          <div>
+            <h4>${card.title}</h4>
+          </div>
+        `;
+
+        const div = document.createElement('div');
+        div.innerHTML = tpl;
+
+        return div.innerHTML;
+      };
+    </script>
   </body>
 </html>
