@@ -2,12 +2,16 @@
   display: flex;
 }
 
-swim-lane {
-  flex-grow: 1;
-  min-width: 100px;
+.swim-lanes .swim-lane:first-child {
+  margin-left: 0;
+}
+
+.swim-lanes .swim-lane:last-child {
+  margin-right: 0;
 }
 
 .swim-lane {
+  flex: 1 1 0px;
   margin: 0.25rem;
   padding: 0.25rem;
   background-color: rgb(243, 243, 243);
@@ -27,12 +31,13 @@ swim-lane {
   margin: 0;
   margin-bottom: 1rem;
   color: rgb(95, 95, 95);
+  font-weight: 500;
 }
 
 .swim-lane-card {
   background: #fff;
   padding: 0.25rem;
-  margin-bottom: 5px;
+  margin-bottom: 0.25rem;
 }
 
 .sortable-ghost {

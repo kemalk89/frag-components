@@ -7,10 +7,10 @@ export interface MenuItems {
 };
 
 @Component({
-  tag: 'top-menu',
-  styleUrl: 'top-menu.css',
+  tag: 'fc-top-menu',
+  styleUrl: 'fc-top-menu.css',
 })
-export class MyComponent {
+export class FcTopMenu {
 
   @Prop() items: MenuItems[];
 

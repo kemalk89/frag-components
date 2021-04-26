@@ -1,0 +1,37 @@
+:root {
+  --button-default-bg-color: blue;
+
+  --button-primary-bg-color: #2e8b57;
+  --button-primary-bg-color-hover: #226840;
+  --button-primary-color: #dfffed;
+
+  --top-menu-bg-color: #2e8b57;
+  --top-menu-item-bg-hover-color: #226840;
+  --top-menu-color: #dfffed;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* utils */
+.fu-bold {
+  font-weight: 400;
+}
+
+.fu-text-lg {
+  font-size: 1.25rem;
+}
+
+.fu-text-xl {
+  font-size: 1.5rem;
+}
+
+.fu-flex {
+  display: flex;
+}

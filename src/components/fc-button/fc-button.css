@@ -1,0 +1,13 @@
+.fc-button {
+  padding: 0.5rem 1.25rem;
+  border: 0;
+}
+
+.fc-button-primary {
+  color: var(--button-primary-color);
+  background-color: var(--button-primary-bg-color);
+}
+
+.fc-button-primary:hover {
+  background-color: var(--button-primary-bg-color-hover);
+}

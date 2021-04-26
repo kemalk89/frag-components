@@ -1,13 +1,12 @@
 import { Component, Fragment, h, State } from '@stencil/core';
-import { CardItem } from '../swim-lanes/swim-lane';
-import { SwimLaneConfig } from '../swim-lanes/swim-lanes';
+import { CardItem } from '../fc-swim-lanes/fc-swim-lane';
 import { MyAPI } from './my-api';
 @Component({
   tag: 'app-container',
 })
 export class MyComponent {
 
-  @State() swimLanesConfig: SwimLaneConfig;
+  @State() swimLanesConfig;
 
   connectedCallback() {
     MyAPI.fetchBoard().then((result) => {
@@ -52,8 +51,9 @@ export class MyComponent {
         </header>
 
         <main>
-          <swim-lanes
-            config={this.swimLanesConfig}
+          <fc-swim-lanes
+            cards={this.swimLanesConfig.cards}
+            lanes={this.swimLanesConfig.lanes}
             renderCardContent={(card) => this.renderCardContent(card)}
             updateCardStatus={(newStatus) => this.updateCardStatus(newStatus)} />
         </main>

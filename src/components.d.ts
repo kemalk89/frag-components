@@ -5,26 +5,36 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { CardItem, RenderCardContent, UpdateCardStatus } from "./components/swim-lanes/swim-lane";
-import { SwimLaneConfig } from "./components/swim-lanes/swim-lanes";
-import { RenderCardContent as RenderCardContent1, UpdateCardStatus as UpdateCardStatus1 } from "./components/swim-lanes/swim-lane";
-import { MenuItems } from "./components/top-menu/top-menu";
+import { CardItem, RenderCardContent, UpdateCardStatus } from "./components/fc-swim-lanes/fc-swim-lane";
+import { CardItem as CardItem1, RenderCardContent as RenderCardContent1, SwimLaneItem, UpdateCardStatus as UpdateCardStatus1 } from "./components/fc-swim-lanes/fc-swim-lane";
+import { MenuItems } from "./components/fc-top-menu/fc-top-menu";
 export namespace Components {
     interface AppContainer {
     }
-    interface SwimLane {
+    interface FcButton {
+        "color": string;
+    }
+    interface FcInput {
+        "label": any;
+    }
+    interface FcModal {
+        "actionButtons": any;
+        "modalTitle": any;
+    }
+    interface FcSwimLane {
         "cards": CardItem[];
         "columnId": string;
         "laneTitle": string;
         "renderCardContent": RenderCardContent;
         "updateCardStatus": UpdateCardStatus;
     }
-    interface SwimLanes {
-        "config": SwimLaneConfig;
+    interface FcSwimLanes {
+        "cards": CardItem[];
+        "lanes": SwimLaneItem[];
         "renderCardContent": RenderCardContent;
         "updateCardStatus": UpdateCardStatus;
     }
-    interface TopMenu {
+    interface FcTopMenu {
         "items": MenuItems[];
     }
 }
@@ -35,54 +45,89 @@ declare global {
         prototype: HTMLAppContainerElement;
         new (): HTMLAppContainerElement;
     };
-    interface HTMLSwimLaneElement extends Components.SwimLane, HTMLStencilElement {
+    interface HTMLFcButtonElement extends Components.FcButton, HTMLStencilElement {
     }
-    var HTMLSwimLaneElement: {
-        prototype: HTMLSwimLaneElement;
-        new (): HTMLSwimLaneElement;
+    var HTMLFcButtonElement: {
+        prototype: HTMLFcButtonElement;
+        new (): HTMLFcButtonElement;
     };
-    interface HTMLSwimLanesElement extends Components.SwimLanes, HTMLStencilElement {
+    interface HTMLFcInputElement extends Components.FcInput, HTMLStencilElement {
     }
-    var HTMLSwimLanesElement: {
-        prototype: HTMLSwimLanesElement;
-        new (): HTMLSwimLanesElement;
+    var HTMLFcInputElement: {
+        prototype: HTMLFcInputElement;
+        new (): HTMLFcInputElement;
     };
-    interface HTMLTopMenuElement extends Components.TopMenu, HTMLStencilElement {
+    interface HTMLFcModalElement extends Components.FcModal, HTMLStencilElement {
     }
-    var HTMLTopMenuElement: {
-        prototype: HTMLTopMenuElement;
-        new (): HTMLTopMenuElement;
+    var HTMLFcModalElement: {
+        prototype: HTMLFcModalElement;
+        new (): HTMLFcModalElement;
+    };
+    interface HTMLFcSwimLaneElement extends Components.FcSwimLane, HTMLStencilElement {
+    }
+    var HTMLFcSwimLaneElement: {
+        prototype: HTMLFcSwimLaneElement;
+        new (): HTMLFcSwimLaneElement;
+    };
+    interface HTMLFcSwimLanesElement extends Components.FcSwimLanes, HTMLStencilElement {
+    }
+    var HTMLFcSwimLanesElement: {
+        prototype: HTMLFcSwimLanesElement;
+        new (): HTMLFcSwimLanesElement;
+    };
+    interface HTMLFcTopMenuElement extends Components.FcTopMenu, HTMLStencilElement {
+    }
+    var HTMLFcTopMenuElement: {
+        prototype: HTMLFcTopMenuElement;
+        new (): HTMLFcTopMenuElement;
     };
     interface HTMLElementTagNameMap {
         "app-container": HTMLAppContainerElement;
-        "swim-lane": HTMLSwimLaneElement;
-        "swim-lanes": HTMLSwimLanesElement;
-        "top-menu": HTMLTopMenuElement;
+        "fc-button": HTMLFcButtonElement;
+        "fc-input": HTMLFcInputElement;
+        "fc-modal": HTMLFcModalElement;
+        "fc-swim-lane": HTMLFcSwimLaneElement;
+        "fc-swim-lanes": HTMLFcSwimLanesElement;
+        "fc-top-menu": HTMLFcTopMenuElement;
     }
 }
 declare namespace LocalJSX {
     interface AppContainer {
     }
-    interface SwimLane {
+    interface FcButton {
+        "color"?: string;
+    }
+    interface FcInput {
+        "label"?: any;
+    }
+    interface FcModal {
+        "actionButtons"?: any;
+        "modalTitle"?: any;
+    }
+    interface FcSwimLane {
         "cards"?: CardItem[];
         "columnId"?: string;
         "laneTitle"?: string;
         "renderCardContent"?: RenderCardContent;
         "updateCardStatus"?: UpdateCardStatus;
     }
-    interface SwimLanes {
-        "config"?: SwimLaneConfig;
+    interface FcSwimLanes {
+        "cards"?: CardItem[];
+        "lanes"?: SwimLaneItem[];
         "renderCardContent"?: RenderCardContent;
         "updateCardStatus"?: UpdateCardStatus;
     }
-    interface TopMenu {
+    interface FcTopMenu {
         "items"?: MenuItems[];
     }
     interface IntrinsicElements {
         "app-container": AppContainer;
-        "swim-lane": SwimLane;
-        "swim-lanes": SwimLanes;
-        "top-menu": TopMenu;
+        "fc-button": FcButton;
+        "fc-input": FcInput;
+        "fc-modal": FcModal;
+        "fc-swim-lane": FcSwimLane;
+        "fc-swim-lanes": FcSwimLanes;
+        "fc-top-menu": FcTopMenu;
     }
 }
 export { LocalJSX as JSX };
@@ -90,9 +135,12 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "app-container": LocalJSX.AppContainer & JSXBase.HTMLAttributes<HTMLAppContainerElement>;
-            "swim-lane": LocalJSX.SwimLane & JSXBase.HTMLAttributes<HTMLSwimLaneElement>;
-            "swim-lanes": LocalJSX.SwimLanes & JSXBase.HTMLAttributes<HTMLSwimLanesElement>;
-            "top-menu": LocalJSX.TopMenu & JSXBase.HTMLAttributes<HTMLTopMenuElement>;
+            "fc-button": LocalJSX.FcButton & JSXBase.HTMLAttributes<HTMLFcButtonElement>;
+            "fc-input": LocalJSX.FcInput & JSXBase.HTMLAttributes<HTMLFcInputElement>;
+            "fc-modal": LocalJSX.FcModal & JSXBase.HTMLAttributes<HTMLFcModalElement>;
+            "fc-swim-lane": LocalJSX.FcSwimLane & JSXBase.HTMLAttributes<HTMLFcSwimLaneElement>;
+            "fc-swim-lanes": LocalJSX.FcSwimLanes & JSXBase.HTMLAttributes<HTMLFcSwimLanesElement>;
+            "fc-top-menu": LocalJSX.FcTopMenu & JSXBase.HTMLAttributes<HTMLFcTopMenuElement>;
         }
     }
 }

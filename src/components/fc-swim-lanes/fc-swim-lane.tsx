@@ -1,4 +1,4 @@
-import { Component, Prop, h, Element } from '@stencil/core';
+import { Component, Prop, h, Element, Host } from '@stencil/core';
 import Sortable from 'sortablejs';
 
 export type SwimLaneItem = {
@@ -14,12 +14,12 @@ export type CardItem = {
 }
 
 export type UpdateCardStatus = (newStatus: { cardId: string, newColumnId: string, position: number }) => void;
-export type RenderCardContent = (card: CardItem) => void;
+export type RenderCardContent = (card: CardItem) => string;
 
 @Component({
-  tag: 'swim-lane'
+  tag: 'fc-swim-lane'
 })
-export class SwimLane {
+export class FcSwimLane {
   @Prop() columnId: string;
   @Prop() laneTitle: string;
   @Prop() cards: CardItem[];
@@ -57,20 +57,17 @@ export class SwimLane {
     });
 
     return (
-      <div class="swim-lane">
+      <Host class="swim-lane">
         <p class="swim-lane-title">{this.laneTitle}</p>
         <div class="swim-lane-cards" data-swim-lane-id={this.columnId}>
-          {filteredItems.length === 0 && (
-            <p>No items</p>
-          )}
           {filteredItems.map(item => (
             <div class="swim-lane-card"
+              innerHTML={this.renderCardContent(item)}
               data-card-id={item.id}>
-                {this.renderCardContent(item)}
             </div>
           ))}
         </div>
-      </div>
+      </Host>
     );
   }
 }

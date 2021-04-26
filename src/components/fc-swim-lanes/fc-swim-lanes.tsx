@@ -1,33 +1,27 @@
 import { Component, Prop, h } from '@stencil/core';
-import { SwimLaneItem, CardItem, UpdateCardStatus, RenderCardContent } from './swim-lane';
-
-export type SwimLaneConfig = {
-  lanes: SwimLaneItem[],
-  cards: CardItem[],
-}
+import { SwimLaneItem, CardItem, UpdateCardStatus, RenderCardContent } from './fc-swim-lane';
 
 @Component({
-  tag: 'swim-lanes',
-  styleUrl: 'index.css'
+  tag: 'fc-swim-lanes',
+  styleUrl: 'fc-swim-lanes.css'
 })
-export class SwimLanes {
+export class FcSwimLanes {
 
-  @Prop() config: SwimLaneConfig;
+  @Prop() lanes: SwimLaneItem[];
+  @Prop() cards: CardItem[];
   @Prop() updateCardStatus: UpdateCardStatus;
   @Prop() renderCardContent: RenderCardContent;
 
   _renderSwimlanes() {
-    const { lanes, cards } = this.config;
-
-    return lanes.map(lane => {
+    return this.lanes.map(lane => {
       return (
-          <swim-lane
+          <fc-swim-lane
             renderCardContent={(card) => this.renderCardContent(card)}
             updateCardStatus={(newStatus) => this.updateCardStatus(newStatus)}
             columnId={lane.columnId}
             laneTitle={lane.title}
-            cards={cards}>
-          </swim-lane>
+            cards={this.cards}>
+          </fc-swim-lane> 
         );
     });
   }

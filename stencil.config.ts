@@ -2,6 +2,7 @@ import { Config } from '@stencil/core';
 
 export const config: Config = {
   namespace: 'component-library',
+  globalStyle: 'src/global/global-styles.css',
   outputTargets: [
     {
       type: 'dist',
