@@ -2,7 +2,8 @@ import { Component, Prop, h } from '@stencil/core';
 
 export interface MenuItems {
   label: string,
-  click: () => void
+  click: () => void,
+  active?: boolean,
 };
 
 @Component({
@@ -17,7 +18,7 @@ export class MyComponent {
     return (
       <ul>
         {this.items.map(i => (
-          <li onClick={i.click}>
+          <li class={i.active && 'top-menu-active'} onClick={i.click}>
             <a>{i.label}</a>
           </li>
         ))}

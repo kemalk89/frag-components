@@ -1,6 +1,13 @@
+:root {
+  --top-menu-bg-color: #2e8b57;
+  --top-menu-item-bg-hover-color: #226840;
+  --top-menu-color: #dfffed;
+}
+
 top-menu ul {
   display: flex;
-  background-color: aqua;
+  background-color: var(--top-menu-bg-color);
+  line-height: 2rem;
 }
 
 top-menu ul > li {
@@ -8,5 +15,16 @@ top-menu ul > li {
 }
 
 top-menu ul > li > * {
+  font-size: 1.25rem;
   padding: 0.5rem 1rem;
+  display: inline-block;
+  color: var(--top-menu-color);
+}
+
+top-menu ul > li > *:hover {
+  background-color: var(--top-menu-item-bg-hover-color);
+}
+
+top-menu .top-menu-active {
+  background-color: var(--top-menu-item-bg-hover-color);
 }

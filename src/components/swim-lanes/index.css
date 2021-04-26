@@ -8,8 +8,8 @@ swim-lane {
 }
 
 .swim-lane {
-  margin: 5px;
-  padding: 2px;
+  margin: 0.25rem;
+  padding: 0.25rem;
   background-color: rgb(243, 243, 243);
   border: 3px dashed rgb(243, 243, 243);;
 }
@@ -25,13 +25,13 @@ swim-lane {
 
 .swim-lane-title {
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
   color: rgb(95, 95, 95);
 }
 
 .swim-lane-card {
   background: #fff;
-  padding: 3px;
+  padding: 0.25rem;
   margin-bottom: 5px;
 }
 

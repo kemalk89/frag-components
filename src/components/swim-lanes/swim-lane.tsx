@@ -60,6 +60,9 @@ export class SwimLane {
       <div class="swim-lane">
         <p class="swim-lane-title">{this.laneTitle}</p>
         <div class="swim-lane-cards" data-swim-lane-id={this.columnId}>
+          {filteredItems.length === 0 && (
+            <p>No items</p>
+          )}
           {filteredItems.map(item => (
             <div class="swim-lane-card"
               data-card-id={item.id}>

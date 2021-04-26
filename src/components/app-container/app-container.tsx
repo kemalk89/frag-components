@@ -37,19 +37,26 @@ export class MyComponent {
 
   render() {
     const menuItems = [
-      { label: 'Home', click: () => console.log(1) },
-      { label: 'Kontakt', click: () => console.log(2) },
-      { label: 'Über uns', click: () => console.log(3) },
-      { label: 'Impressum', click: () => console.log(4) },
+      { label: 'Tasks', active: true, click: () => console.log(1) },
+      { label: 'Projects', click: () => console.log(2) },
+      { label: 'Timebookings', click: () => console.log(3) },
+      { label: 'Controlling', click: () => console.log(4) },
+      { label: 'Wiki', click: () => console.log(4) },
+      { label: '', click: () => console.log(4) },
     ];
 
     return (
       <Fragment>
-        <top-menu items={menuItems} />
-        <swim-lanes
-          config={this.swimLanesConfig}
-          renderCardContent={(card) => this.renderCardContent(card)}
-          updateCardStatus={(newStatus) => this.updateCardStatus(newStatus)} />
+        <header>
+          <top-menu items={menuItems} />
+        </header>
+
+        <main>
+          <swim-lanes
+            config={this.swimLanesConfig}
+            renderCardContent={(card) => this.renderCardContent(card)}
+            updateCardStatus={(newStatus) => this.updateCardStatus(newStatus)} />
+        </main>
       </Fragment>
     );
   }
