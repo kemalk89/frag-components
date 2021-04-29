@@ -1,0 +1,1 @@
+To generate a new component run ```npm run generate```

@@ -1,0 +1,33 @@
+{
+  "name": "frag-components-react",
+  "sideEffects": false,
+  "version": "0.0.1",
+  "private": true,
+  "description": "React specific wrapper for component-library",
+  "scripts": {
+    "build": "yarn clean && yarn compile && yarn compile:cjs",
+    "clean": "rm -rf dist",
+    "compile": "yarn tsc",
+    "compile:cjs": "yarn tsc:cjs",
+    "tsc": "tsc -p . --outDir dist/esm",
+    "tsc:cjs": "tsc -p . --module CommonJS --target es5"
+  },
+  "main": "./dist/components.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "devDependencies": {
+    "@types/node": "^15.0.1",
+    "@types/react": "^17.0.4",
+    "@types/react-dom": "^17.0.3",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "frag-components": "0.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "peerDependencies": {}
+}

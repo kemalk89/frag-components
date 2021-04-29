@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Stencil Component Starter</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="dist/main.css" rel="stylesheet">
+
+  <style>
+    main {
+      padding: 0.5rem 1rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <fc-top-menu></fc-top-menu>
+  <main>
+    <fc-modal modal-title="New task">
+        <fc-input label="Title"></fc-input>
+        <fc-input label="Assignee"></fc-input>
+        <fc-input label="Priority"></fc-input>
+    </fc-modal>
+    
+    <fc-button id="newTaskBtn">New</fc-button>
+    <fc-swim-lanes></fc-swim-lanes>
+  </main>
+
+  <script src="dist/vendors-node_modules_stencil_core_internal_client_shadow-css_js.bundle.js"></script>
+  <script src="dist/bundle.js"></script>
+
+</body>
+
+</html>
