@@ -16,6 +16,7 @@
     main {
       padding: 0.5rem 1rem;
     }
+
   </style>
 </head>
 
@@ -23,10 +24,10 @@
 
   <fc-top-menu></fc-top-menu>
   <main>
-    <fc-modal modal-title="New task">
-        <fc-input label="Title"></fc-input>
-        <fc-input label="Assignee"></fc-input>
-        <fc-input label="Priority"></fc-input>
+    <fc-modal modal-title="New task" is-open="false">
+      <fc-input label="Title"></fc-input>
+      <fc-input label="Assignee"></fc-input>
+      <fc-input label="Priority"></fc-input>
     </fc-modal>
     
     <fc-button id="newTaskBtn">New</fc-button>
@@ -38,13 +39,17 @@
     const modal = document.querySelector('fc-modal');
     modal.actionButtons = [
       { label: 'Save', color: 'primary' },
-      { label: 'Cancel' },
+      { label: 'Cancel', click: () => { modal.isOpen = false; } },
     ];
+    modal.addEventListener('close', () => {
+      console.log('close');
+      modal.isOpen = false;
+    });
 
     // New Task button
     const newTaskBtn = document.querySelector('#newTaskBtn');
     newTaskBtn.addEventListener('click', (e) => {
-      console.log('Go');
+      modal.isOpen = true;
     });
 
     // Top Menu

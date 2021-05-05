@@ -13,13 +13,16 @@ window.addEventListener('load', () => {
   const modal = document.querySelector('fc-modal');
   modal.actionButtons = [
     { label: 'Save', color: 'primary' },
-    { label: 'Cancel' },
+    { label: 'Cancel', click: () => { modal.isOpen = false; } },
   ];
+  modal.addEventListener('close', () => {
+    modal.isOpen = false;
+  });
 
   // New Task button
   const newTaskBtn = document.querySelector('#newTaskBtn');
   newTaskBtn.addEventListener('click', (e) => {
-    console.log('Go');
+    modal.isOpen = true;
   });
 
   // Top Menu

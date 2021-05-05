@@ -7,10 +7,18 @@
 
 ## Properties
 
-| Property        | Attribute        | Description | Type  | Default     |
-| --------------- | ---------------- | ----------- | ----- | ----------- |
-| `actionButtons` | `action-buttons` |             | `any` | `undefined` |
-| `modalTitle`    | `modal-title`    |             | `any` | `undefined` |
+| Property        | Attribute     | Description | Type             | Default     |
+| --------------- | ------------- | ----------- | ---------------- | ----------- |
+| `actionButtons` | --            |             | `ActionButton[]` | `undefined` |
+| `isOpen`        | `is-open`     |             | `boolean`        | `undefined` |
+| `modalTitle`    | `modal-title` |             | `string`         | `undefined` |
+
+
+## Events
+
+| Event   | Description | Type                |
+| ------- | ----------- | ------------------- |
+| `close` |             | `CustomEvent<void>` |
 
 
 ## Dependencies

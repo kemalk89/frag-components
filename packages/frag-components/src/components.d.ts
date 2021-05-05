@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { ActionButton } from "./components/fc-modal/fc-modal";
 import { CardItem, RenderCardContent, UpdateCardStatus } from "./components/fc-swim-lanes/fc-swim-lane";
 import { CardItem as CardItem1, RenderCardContent as RenderCardContent1, SwimLaneItem, UpdateCardStatus as UpdateCardStatus1 } from "./components/fc-swim-lanes/fc-swim-lane";
 import { MenuItems } from "./components/fc-top-menu/fc-top-menu";
@@ -18,8 +19,9 @@ export namespace Components {
         "label": any;
     }
     interface FcModal {
-        "actionButtons": any;
-        "modalTitle": any;
+        "actionButtons": ActionButton[];
+        "isOpen": boolean;
+        "modalTitle": string;
     }
     interface FcSwimLane {
         "cards": CardItem[];
@@ -101,8 +103,10 @@ declare namespace LocalJSX {
         "label"?: any;
     }
     interface FcModal {
-        "actionButtons"?: any;
-        "modalTitle"?: any;
+        "actionButtons"?: ActionButton[];
+        "isOpen"?: boolean;
+        "modalTitle"?: string;
+        "onClose"?: (event: CustomEvent<void>) => void;
     }
     interface FcSwimLane {
         "cards"?: CardItem[];
