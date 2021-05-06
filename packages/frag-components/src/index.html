@@ -23,15 +23,25 @@
 <body>
 
   <fc-top-menu></fc-top-menu>
-  <main>
+  <main>  
     <fc-modal modal-title="New task" is-open="false">
       <fc-input label="Title"></fc-input>
       <fc-input label="Assignee"></fc-input>
       <fc-input label="Priority"></fc-input>
     </fc-modal>
     
-    <fc-button id="newTaskBtn">New</fc-button>
-    <fc-swim-lanes></fc-swim-lanes>
+    <fc-tabs id="tabs" selected-tab="list">
+      <fc-tab tab="board">
+        <fc-button color="secondary" id="newTaskBtn">New</fc-button>
+        <fc-swim-lanes></fc-swim-lanes>
+      </fc-tab>
+      <fc-tab tab="list">
+        List View
+      </fc-tab>
+      <fc-tab tab="workload">
+        Work load
+      </fc-tab>
+    </fc-tabs>
   </main>
 
   <script>
@@ -45,6 +55,14 @@
       console.log('close');
       modal.isOpen = false;
     });
+
+    // Tabs
+    const tabs = document.querySelector('#tabs');
+    tabs.tabs = [
+      { label: 'Board', tab: 'board' },
+      { label: 'List', tab: 'list' },
+      { label: 'Workload', tab: 'workload' },
+    ];
 
     // New Task button
     const newTaskBtn = document.querySelector('#newTaskBtn');

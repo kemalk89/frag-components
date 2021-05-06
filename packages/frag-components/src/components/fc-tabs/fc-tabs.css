@@ -1,0 +1,8 @@
+.fc-tab-active {
+  border: 2px solid var(--button-primary-bg-color);
+  border-bottom-width: 0;
+}
+
+.fc-tabs {
+  border-bottom: 2px solid var(--button-primary-bg-color);
+}

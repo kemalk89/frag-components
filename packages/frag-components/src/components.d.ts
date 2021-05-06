@@ -8,6 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ActionButton } from "./components/fc-modal/fc-modal";
 import { CardItem, RenderCardContent, UpdateCardStatus } from "./components/fc-swim-lanes/fc-swim-lane";
 import { CardItem as CardItem1, RenderCardContent as RenderCardContent1, SwimLaneItem, UpdateCardStatus as UpdateCardStatus1 } from "./components/fc-swim-lanes/fc-swim-lane";
+import { Tab } from "./components/fc-tabs/fc-tabs";
 import { MenuItems } from "./components/fc-top-menu/fc-top-menu";
 export namespace Components {
     interface AppContainer {
@@ -35,6 +36,13 @@ export namespace Components {
         "lanes": SwimLaneItem[];
         "renderCardContent": RenderCardContent;
         "updateCardStatus": UpdateCardStatus;
+    }
+    interface FcTab {
+        "tab": string;
+    }
+    interface FcTabs {
+        "selectedTab": string;
+        "tabs": Tab[];
     }
     interface FcTopMenu {
         "items": MenuItems[];
@@ -77,6 +85,18 @@ declare global {
         prototype: HTMLFcSwimLanesElement;
         new (): HTMLFcSwimLanesElement;
     };
+    interface HTMLFcTabElement extends Components.FcTab, HTMLStencilElement {
+    }
+    var HTMLFcTabElement: {
+        prototype: HTMLFcTabElement;
+        new (): HTMLFcTabElement;
+    };
+    interface HTMLFcTabsElement extends Components.FcTabs, HTMLStencilElement {
+    }
+    var HTMLFcTabsElement: {
+        prototype: HTMLFcTabsElement;
+        new (): HTMLFcTabsElement;
+    };
     interface HTMLFcTopMenuElement extends Components.FcTopMenu, HTMLStencilElement {
     }
     var HTMLFcTopMenuElement: {
@@ -90,6 +110,8 @@ declare global {
         "fc-modal": HTMLFcModalElement;
         "fc-swim-lane": HTMLFcSwimLaneElement;
         "fc-swim-lanes": HTMLFcSwimLanesElement;
+        "fc-tab": HTMLFcTabElement;
+        "fc-tabs": HTMLFcTabsElement;
         "fc-top-menu": HTMLFcTopMenuElement;
     }
 }
@@ -121,6 +143,13 @@ declare namespace LocalJSX {
         "renderCardContent"?: RenderCardContent;
         "updateCardStatus"?: UpdateCardStatus;
     }
+    interface FcTab {
+        "tab"?: string;
+    }
+    interface FcTabs {
+        "selectedTab"?: string;
+        "tabs"?: Tab[];
+    }
     interface FcTopMenu {
         "items"?: MenuItems[];
     }
@@ -131,6 +160,8 @@ declare namespace LocalJSX {
         "fc-modal": FcModal;
         "fc-swim-lane": FcSwimLane;
         "fc-swim-lanes": FcSwimLanes;
+        "fc-tab": FcTab;
+        "fc-tabs": FcTabs;
         "fc-top-menu": FcTopMenu;
     }
 }
@@ -144,6 +175,8 @@ declare module "@stencil/core" {
             "fc-modal": LocalJSX.FcModal & JSXBase.HTMLAttributes<HTMLFcModalElement>;
             "fc-swim-lane": LocalJSX.FcSwimLane & JSXBase.HTMLAttributes<HTMLFcSwimLaneElement>;
             "fc-swim-lanes": LocalJSX.FcSwimLanes & JSXBase.HTMLAttributes<HTMLFcSwimLanesElement>;
+            "fc-tab": LocalJSX.FcTab & JSXBase.HTMLAttributes<HTMLFcTabElement>;
+            "fc-tabs": LocalJSX.FcTabs & JSXBase.HTMLAttributes<HTMLFcTabsElement>;
             "fc-top-menu": LocalJSX.FcTopMenu & JSXBase.HTMLAttributes<HTMLFcTopMenuElement>;
         }
     }

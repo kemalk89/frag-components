@@ -3,6 +3,7 @@
   border: 0;
 }
 
+/* colors primary button */
 .fc-button-primary {
   color: var(--button-primary-color);
   background-color: var(--button-primary-bg-color);
@@ -10,4 +11,26 @@
 
 .fc-button-primary:hover {
   background-color: var(--button-primary-bg-color-hover);
+}
+
+/* colors secondary button */
+.fc-button-secondary {
+  color: var(--button-secondary-color);
+  background-color: var(--button-secondary-bg-color);
+}
+
+.fc-button-secondary:hover {
+  background-color: var(--button-secondary-bg-color-hover);
+}
+
+/* colors tertiary button */
+.fc-button-tertiary {
+  color: var(--button-tertiary-color);
+  background-color: var(--button-tertiary-bg-color);
+}
+
+/* no bg color */
+.fc-button-none {
+  color: var(--button-none-color);
+  background-color: var(--button-none-bg-color);
 }

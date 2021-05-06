@@ -6,7 +6,7 @@ import { Component, h, Prop } from '@stencil/core';
 })
 export class FcButton {
 
-  @Prop() color: string;
+  @Prop() color: string = 'secondary';
 
   render() {
     let classNames = "fc-button";
