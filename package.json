@@ -3,6 +3,7 @@
     "workspaces": ["packages/*"],
     "scripts": {
         "start": "yarn workspace frag-components start",
-        "build": "yarn workspace frag-components build && yarn workspace frag-components-react build && yarn workspace app-vanilla build"
+        "build": "yarn workspace frag-components build && yarn workspace frag-components-react build && yarn workspace app-vanilla build",
+        "build:vanilla": "yarn workspace app-vanilla build"
     }
 }

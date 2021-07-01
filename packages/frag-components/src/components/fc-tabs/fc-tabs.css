@@ -1,6 +1,12 @@
+.fc-tab {
+  border: 2px solid transparent;
+  border-bottom-width: 0;
+  margin-bottom: -2px;
+}
+
 .fc-tab-active {
   border: 2px solid var(--button-primary-bg-color);
-  border-bottom-width: 0;
+  border-bottom-color: var(--body-bg-color);
 }
 
 .fc-tabs {

@@ -61,7 +61,9 @@ export class FcTabs {
   render() {
     return (
       <Fragment>
-        <div class="fu-flex fc-tabs">{this.tabs.map(i => this.renderTab(i))}</div>
+        <div class="fu-flex fc-tabs">
+          {this.tabs.map(i => this.renderTab(i))}
+        </div>
 
         <div class="fu-pt"></div>
 

@@ -1,13 +1,16 @@
-import {FcButton, FcInput, FcModal, FcSwimLanes, FcTopMenu} from "frag-components";
+import { FcButton, FcInput, FcModal, FcSwimLane, FcSwimLanes, FcTab, FcTabs, FcTopMenu } from "frag-components";
 import "frag-components/dist/frag-components/frag-components.css";
 
 window.addEventListener('load', () => {
 
+  customElements.define('fc-tab', FcTab);
+  customElements.define('fc-tabs', FcTabs);
   customElements.define('fc-button', FcButton);
   customElements.define('fc-modal', FcModal);
   customElements.define('fc-top-menu', FcTopMenu);
   customElements.define('fc-input', FcInput);
   customElements.define('fc-swim-lanes', FcSwimLanes);
+  customElements.define('fc-swim-lane', FcSwimLane);
 
   // Modal
   const modal = document.querySelector('fc-modal');
@@ -18,6 +21,14 @@ window.addEventListener('load', () => {
   modal.addEventListener('close', () => {
     modal.isOpen = false;
   });
+
+  // Tabs
+  const tabs = document.querySelector('#tabs');
+  tabs.tabs = [
+    { label: 'Board', tab: 'board' },
+    { label: 'List', tab: 'list' },
+    { label: 'Workload', tab: 'workload' },
+  ];
 
   // New Task button
   const newTaskBtn = document.querySelector('#newTaskBtn');
