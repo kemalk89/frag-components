@@ -24,6 +24,8 @@ export namespace Components {
         "isOpen": boolean;
         "modalTitle": string;
     }
+    interface FcSelect {
+    }
     interface FcSwimLane {
         "cards": CardItem[];
         "columnId": string;
@@ -73,6 +75,12 @@ declare global {
         prototype: HTMLFcModalElement;
         new (): HTMLFcModalElement;
     };
+    interface HTMLFcSelectElement extends Components.FcSelect, HTMLStencilElement {
+    }
+    var HTMLFcSelectElement: {
+        prototype: HTMLFcSelectElement;
+        new (): HTMLFcSelectElement;
+    };
     interface HTMLFcSwimLaneElement extends Components.FcSwimLane, HTMLStencilElement {
     }
     var HTMLFcSwimLaneElement: {
@@ -108,6 +116,7 @@ declare global {
         "fc-button": HTMLFcButtonElement;
         "fc-input": HTMLFcInputElement;
         "fc-modal": HTMLFcModalElement;
+        "fc-select": HTMLFcSelectElement;
         "fc-swim-lane": HTMLFcSwimLaneElement;
         "fc-swim-lanes": HTMLFcSwimLanesElement;
         "fc-tab": HTMLFcTabElement;
@@ -129,6 +138,8 @@ declare namespace LocalJSX {
         "isOpen"?: boolean;
         "modalTitle"?: string;
         "onClose"?: (event: CustomEvent<void>) => void;
+    }
+    interface FcSelect {
     }
     interface FcSwimLane {
         "cards"?: CardItem[];
@@ -158,6 +169,7 @@ declare namespace LocalJSX {
         "fc-button": FcButton;
         "fc-input": FcInput;
         "fc-modal": FcModal;
+        "fc-select": FcSelect;
         "fc-swim-lane": FcSwimLane;
         "fc-swim-lanes": FcSwimLanes;
         "fc-tab": FcTab;
@@ -173,6 +185,7 @@ declare module "@stencil/core" {
             "fc-button": LocalJSX.FcButton & JSXBase.HTMLAttributes<HTMLFcButtonElement>;
             "fc-input": LocalJSX.FcInput & JSXBase.HTMLAttributes<HTMLFcInputElement>;
             "fc-modal": LocalJSX.FcModal & JSXBase.HTMLAttributes<HTMLFcModalElement>;
+            "fc-select": LocalJSX.FcSelect & JSXBase.HTMLAttributes<HTMLFcSelectElement>;
             "fc-swim-lane": LocalJSX.FcSwimLane & JSXBase.HTMLAttributes<HTMLFcSwimLaneElement>;
             "fc-swim-lanes": LocalJSX.FcSwimLanes & JSXBase.HTMLAttributes<HTMLFcSwimLanesElement>;
             "fc-tab": LocalJSX.FcTab & JSXBase.HTMLAttributes<HTMLFcTabElement>;
