@@ -8,10 +8,11 @@ export const config: Config = {
     reactOutputTarget({
       componentCorePackage: 'frag-components',
       proxiesFile: '../frag-components-react/src/generated/components.ts',
+      includeDefineCustomElements: true,
     }),
     {
       type: 'dist',
-      esmLoaderPath: '../loader',
+      //esmLoaderPath: '../loader',
     },
     {
       type: 'dist-custom-elements-bundle',

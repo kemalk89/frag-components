@@ -14,7 +14,7 @@ export type ActionButton = {
 export class FcModal {
   @Prop() isOpen: boolean;
   @Prop() modalTitle: string;
-  @Prop() actionButtons: ActionButton[];
+  @Prop() actionButtons: ActionButton[] = [];
   @Event() close: EventEmitter<void>;
 
   render() {
