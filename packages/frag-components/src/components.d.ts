@@ -46,6 +46,10 @@ export namespace Components {
         "selectedTab": string;
         "tabs": Tab[];
     }
+    interface FcToast {
+    }
+    interface FcTooltip {
+    }
     interface FcTopMenu {
         "items": MenuItems[];
     }
@@ -105,6 +109,18 @@ declare global {
         prototype: HTMLFcTabsElement;
         new (): HTMLFcTabsElement;
     };
+    interface HTMLFcToastElement extends Components.FcToast, HTMLStencilElement {
+    }
+    var HTMLFcToastElement: {
+        prototype: HTMLFcToastElement;
+        new (): HTMLFcToastElement;
+    };
+    interface HTMLFcTooltipElement extends Components.FcTooltip, HTMLStencilElement {
+    }
+    var HTMLFcTooltipElement: {
+        prototype: HTMLFcTooltipElement;
+        new (): HTMLFcTooltipElement;
+    };
     interface HTMLFcTopMenuElement extends Components.FcTopMenu, HTMLStencilElement {
     }
     var HTMLFcTopMenuElement: {
@@ -121,6 +137,8 @@ declare global {
         "fc-swim-lanes": HTMLFcSwimLanesElement;
         "fc-tab": HTMLFcTabElement;
         "fc-tabs": HTMLFcTabsElement;
+        "fc-toast": HTMLFcToastElement;
+        "fc-tooltip": HTMLFcTooltipElement;
         "fc-top-menu": HTMLFcTopMenuElement;
     }
 }
@@ -161,6 +179,10 @@ declare namespace LocalJSX {
         "selectedTab"?: string;
         "tabs"?: Tab[];
     }
+    interface FcToast {
+    }
+    interface FcTooltip {
+    }
     interface FcTopMenu {
         "items"?: MenuItems[];
     }
@@ -174,6 +196,8 @@ declare namespace LocalJSX {
         "fc-swim-lanes": FcSwimLanes;
         "fc-tab": FcTab;
         "fc-tabs": FcTabs;
+        "fc-toast": FcToast;
+        "fc-tooltip": FcTooltip;
         "fc-top-menu": FcTopMenu;
     }
 }
@@ -190,6 +214,8 @@ declare module "@stencil/core" {
             "fc-swim-lanes": LocalJSX.FcSwimLanes & JSXBase.HTMLAttributes<HTMLFcSwimLanesElement>;
             "fc-tab": LocalJSX.FcTab & JSXBase.HTMLAttributes<HTMLFcTabElement>;
             "fc-tabs": LocalJSX.FcTabs & JSXBase.HTMLAttributes<HTMLFcTabsElement>;
+            "fc-toast": LocalJSX.FcToast & JSXBase.HTMLAttributes<HTMLFcToastElement>;
+            "fc-tooltip": LocalJSX.FcTooltip & JSXBase.HTMLAttributes<HTMLFcTooltipElement>;
             "fc-top-menu": LocalJSX.FcTopMenu & JSXBase.HTMLAttributes<HTMLFcTopMenuElement>;
         }
     }
