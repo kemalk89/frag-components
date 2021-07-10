@@ -12,8 +12,8 @@
     "tsc": "tsc -p . --outDir dist/esm",
     "tsc:cjs": "tsc -p . --module CommonJS --target es5"
   },
-  "main": "./dist/components.js",
-  "module": "./dist/esm/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist/"
