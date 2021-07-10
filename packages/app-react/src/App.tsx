@@ -1,8 +1,10 @@
 import React from 'react';
-import { FcButton, FcModal } from 'frag-components-react';
+import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { FcButton, FcModal } from 'frag-components-react';
 import 'frag-components/dist/frag-components/frag-components.css'
+import { useState } from 'react';
+
 
 function App() {
   const [open, setOpen] = useState<boolean>(false);
@@ -10,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <FcButton onClick={() => setOpen(true)} color="primary">Löschen</FcButton>
-      <FcModal onClose={() => console.log(123)} modalTitle="Bestätigung" isOpen={open}>
+      <FcModal onClose={() => setOpen(false)} modalTitle="Bestätigung" isOpen={open}>
         Sind Sie wirklich sicher?
       </FcModal>
     </div>
