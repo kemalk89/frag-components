@@ -2,8 +2,12 @@
     "private": true,
     "workspaces": ["packages/*"],
     "scripts": {
-        "start": "yarn workspace frag-components start",
-        "build": "yarn workspace frag-components build && yarn workspace frag-components-react build && yarn workspace app-vanilla build",
+        "start": "yarn start:frag_components",
+        "start:frag_components": "yarn workspace frag-components start",
+        "start:app_pool": "yarn workspace app-pool start",
+        "build": "yarn build:frag_components && yarn build:frag_components_react && yarn build:vanilla",
+        "build:frag_components": "yarn workspace frag-components build && yarn build:frag_components_react",
+        "build:frag_components_react": "yarn workspace frag-components-react build",
         "build:vanilla": "yarn workspace app-vanilla build"
     }
 }
