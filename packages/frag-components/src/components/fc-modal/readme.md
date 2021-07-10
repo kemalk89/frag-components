@@ -9,16 +9,16 @@
 
 | Property        | Attribute     | Description | Type             | Default     |
 | --------------- | ------------- | ----------- | ---------------- | ----------- |
-| `actionButtons` | --            |             | `ActionButton[]` | `undefined` |
+| `actionButtons` | --            |             | `ActionButton[]` | `[]`        |
 | `isOpen`        | `is-open`     |             | `boolean`        | `undefined` |
 | `modalTitle`    | `modal-title` |             | `string`         | `undefined` |
 
 
 ## Events
 
-| Event   | Description | Type                |
-| ------- | ----------- | ------------------- |
-| `close` |             | `CustomEvent<void>` |
+| Event        | Description | Type                |
+| ------------ | ----------- | ------------------- |
+| `closeModal` |             | `CustomEvent<void>` |
 
 
 ## Dependencies

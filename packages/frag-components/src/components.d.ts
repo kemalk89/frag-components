@@ -155,7 +155,7 @@ declare namespace LocalJSX {
         "actionButtons"?: ActionButton[];
         "isOpen"?: boolean;
         "modalTitle"?: string;
-        "onClose"?: (event: CustomEvent<void>) => void;
+        "onCloseModal"?: (event: CustomEvent<void>) => void;
     }
     interface FcSelect {
     }
