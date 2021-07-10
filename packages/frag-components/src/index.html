@@ -52,7 +52,7 @@
       { label: 'Save', color: 'primary' },
       { label: 'Cancel', click: () => { modal.isOpen = false; } },
     ];
-    modal.addEventListener('close', () => {
+    modal.addEventListener('closeModal', () => {
       console.log('close');
       modal.isOpen = false;
     });

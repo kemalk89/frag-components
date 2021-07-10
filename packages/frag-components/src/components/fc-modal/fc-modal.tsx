@@ -15,7 +15,7 @@ export class FcModal {
   @Prop() isOpen: boolean;
   @Prop() modalTitle: string;
   @Prop() actionButtons: ActionButton[] = [];
-  @Event() close: EventEmitter<void>;
+  @Event() closeModal: EventEmitter<void>;
 
   render() {
     return (
@@ -25,7 +25,7 @@ export class FcModal {
           <div class="fc-modal-title">
             <span class="fu-bold fu-text-lg">{this.modalTitle}</span>
 
-            <button class="fc-modal-title-close-btn" onClick={() => this.close.emit() }>
+            <button class="fc-modal-title-close-btn" onClick={() => this.closeModal.emit() }>
               <IconClose />
             </button>
           </div>

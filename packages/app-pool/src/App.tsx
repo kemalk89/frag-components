@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <FcButton onClick={() => setOpen(true)} color="primary">Löschen</FcButton>
-      <FcModal onClose={() => console.log(123)} modalTitle="Bestätigung" isOpen={open}>
+      <FcModal onCloseModal={() => setOpen(false)}  modalTitle="Bestätigung" isOpen={open}>
         Sind Sie wirklich sicher?
       </FcModal>
     </div>

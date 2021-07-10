@@ -18,7 +18,7 @@ window.addEventListener('load', () => {
     { label: 'Save', color: 'primary' },
     { label: 'Cancel', click: () => { modal.isOpen = false; } },
   ];
-  modal.addEventListener('close', () => {
+  modal.addEventListener('closeModal', () => {
     modal.isOpen = false;
   });
 
