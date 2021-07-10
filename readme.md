@@ -8,6 +8,9 @@ First run ```yarn build```
 
 Next, you can start one of the clients consuming the frag-components.
 
+# Install package in anotherpackage
+```yarn workspace <package> add <package-name>@0.0.1```
+
 ## Starting app-vanilla
 app-vanilla is a frontend built without a framework / library. Look into this project to see how the webcomponents are wired into the application.
 
