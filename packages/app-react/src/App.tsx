@@ -1,18 +1,30 @@
-import React from 'react';
-import { FcButton, FcModal } from 'frag-components-react';
-import './App.css';
-import { useState } from 'react';
-import 'frag-components/dist/frag-components/frag-components.css'
+import React from "react";
+import "./App.css";
+import Navbar from "./components/navbar/navbar";
+import {
+  HashRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Projects from "./components/projects/projects";
+import Timesheet from "./components/timesheet/timesheet";
 
 function App() {
-  const [open, setOpen] = useState<boolean>(false);
-  
+
   return (
     <div className="App">
-      <FcButton onClick={() => setOpen(true)} color="primary">Löschen</FcButton>
-      <FcModal onCloseModal={() => setOpen(false)}  modalTitle="Bestätigung" isOpen={open}>
-        Sind Sie wirklich sicher?
-      </FcModal>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <Projects />
+          </Route>
+          <Route path="/timesheet">
+            <Timesheet />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

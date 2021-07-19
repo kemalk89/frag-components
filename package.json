@@ -6,8 +6,7 @@
         "start:frag-components": "yarn workspace frag-components start",
         "start:app-react": "yarn workspace app-react start",
         "build": "yarn build:frag-components && yarn build:frag-components-react && yarn build:app-vanilla",
-        "build:frag-components": "yarn workspace frag-components build && yarn build:frag-components-react",
-        "build:frag-components-react": "yarn workspace frag-components-react build",
+        "build:frag-components": "yarn workspace frag-components build && yarn workspace frag-components-react build",
         "build:app-vanilla": "yarn workspace app-vanilla build"
     }
 }

@@ -1,9 +1,11 @@
 :root {
+  --primary-color: #2e8b57;
+
   --body-bg-color: rgb(255, 255, 255);
 
   --button-default-bg-color: blue;
 
-  --button-primary-bg-color: #2e8b57;
+  --button-primary-bg-color: var(--primary-color);
   --button-primary-bg-color-hover: #226840;
   --button-primary-color: #dfffed;
 
@@ -17,7 +19,7 @@
   --button-none-bg-color: var(--body-bg-color);
   --button-none-color: #000;
 
-  --top-menu-bg-color: #2e8b57;
+  --top-menu-bg-color: var(--primary-color);
   --top-menu-item-bg-hover-color: #226840;
   --top-menu-color: #dfffed;
 }

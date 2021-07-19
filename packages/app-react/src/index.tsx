@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import "frag-components/dist/frag-components/frag-components.css";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
