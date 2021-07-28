@@ -39,6 +39,25 @@ button:not(:disabled) {
   cursor: pointer;
 }
 
+/* designs */
+.fc-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.fc-table thead td {
+  font-weight: 700;
+}
+
+.fc-table tbody tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+.fc-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
 /* utils */
 .fu-bold {
   font-weight: 400;
