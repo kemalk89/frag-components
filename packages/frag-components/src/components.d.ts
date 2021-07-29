@@ -16,6 +16,9 @@ export namespace Components {
     interface FcButton {
         "color": string;
     }
+    interface FcIconButton {
+        "color": string;
+    }
     interface FcInput {
         "label": any;
     }
@@ -66,6 +69,12 @@ declare global {
     var HTMLFcButtonElement: {
         prototype: HTMLFcButtonElement;
         new (): HTMLFcButtonElement;
+    };
+    interface HTMLFcIconButtonElement extends Components.FcIconButton, HTMLStencilElement {
+    }
+    var HTMLFcIconButtonElement: {
+        prototype: HTMLFcIconButtonElement;
+        new (): HTMLFcIconButtonElement;
     };
     interface HTMLFcInputElement extends Components.FcInput, HTMLStencilElement {
     }
@@ -130,6 +139,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "app-container": HTMLAppContainerElement;
         "fc-button": HTMLFcButtonElement;
+        "fc-icon-button": HTMLFcIconButtonElement;
         "fc-input": HTMLFcInputElement;
         "fc-modal": HTMLFcModalElement;
         "fc-select": HTMLFcSelectElement;
@@ -146,6 +156,9 @@ declare namespace LocalJSX {
     interface AppContainer {
     }
     interface FcButton {
+        "color"?: string;
+    }
+    interface FcIconButton {
         "color"?: string;
     }
     interface FcInput {
@@ -189,6 +202,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "app-container": AppContainer;
         "fc-button": FcButton;
+        "fc-icon-button": FcIconButton;
         "fc-input": FcInput;
         "fc-modal": FcModal;
         "fc-select": FcSelect;
@@ -207,6 +221,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "app-container": LocalJSX.AppContainer & JSXBase.HTMLAttributes<HTMLAppContainerElement>;
             "fc-button": LocalJSX.FcButton & JSXBase.HTMLAttributes<HTMLFcButtonElement>;
+            "fc-icon-button": LocalJSX.FcIconButton & JSXBase.HTMLAttributes<HTMLFcIconButtonElement>;
             "fc-input": LocalJSX.FcInput & JSXBase.HTMLAttributes<HTMLFcInputElement>;
             "fc-modal": LocalJSX.FcModal & JSXBase.HTMLAttributes<HTMLFcModalElement>;
             "fc-select": LocalJSX.FcSelect & JSXBase.HTMLAttributes<HTMLFcSelectElement>;

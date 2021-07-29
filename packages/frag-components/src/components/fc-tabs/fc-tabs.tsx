@@ -3,7 +3,7 @@ import { Component, h, Prop, Element, Fragment } from '@stencil/core';
 export type Tab = {
   tab: string;
   label: string;
-  active: boolean;
+  active?: boolean;
 };
 
 @Component({
@@ -12,7 +12,7 @@ export type Tab = {
 })
 export class FcTabs {
   @Element() el: HTMLElement;
-  @Prop() tabs: Tab[];
+  @Prop() tabs: Tab[] = [];
   @Prop({ mutable: true }) selectedTab: string;
 
   private selectTab(tab: Tab) {

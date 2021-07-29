@@ -10,7 +10,7 @@
 | Property      | Attribute      | Description | Type     | Default     |
 | ------------- | -------------- | ----------- | -------- | ----------- |
 | `selectedTab` | `selected-tab` |             | `string` | `undefined` |
-| `tabs`        | --             |             | `Tab[]`  | `undefined` |
+| `tabs`        | --             |             | `Tab[]`  | `[]`        |
 
 
 ## Dependencies

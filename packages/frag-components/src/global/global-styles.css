@@ -19,6 +19,10 @@
   --button-none-bg-color: var(--body-bg-color);
   --button-none-color: #000;
 
+  --button-danger-bg-color: rgb(224, 32, 32);
+  --button-danger-bg-color-hover: rgb(252, 7, 7);
+  --button-danger-color: #fff;
+
   --top-menu-bg-color: var(--primary-color);
   --top-menu-item-bg-hover-color: #226840;
   --top-menu-color: #dfffed;
@@ -50,11 +54,11 @@ button:not(:disabled) {
 }
 
 .fc-table tbody tr:nth-child(even){
-  background-color: #f2f2f2;
+  background-color: #fefefe;
 }
 
 .fc-table td {
-  border: 1px solid #ddd;
+  border: 1px solid rgb(240, 240, 240);
   padding: 8px;
 }
 
@@ -75,12 +79,24 @@ button:not(:disabled) {
   display: flex;
 }
 
+.fu-flex-1 {
+  flex: 1;
+}
+
 .fu-hidden {
   display: none;
 }
 
 .fu-pb {
   padding-bottom: 1rem;
+}
+
+.fu-pr {
+  padding-right: 1rem;
+}
+
+.fu-pl {
+  padding-left: 1rem;
 }
 
 .fu-pt {

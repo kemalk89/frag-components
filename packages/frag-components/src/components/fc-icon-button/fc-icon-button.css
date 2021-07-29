@@ -1,0 +1,24 @@
+button {
+  border-radius: 50%;
+  padding: 0.5rem;
+  border: 0;
+  cursor: pointer;
+}
+
+button.secondary {
+  color: var(--button-secondary-color);
+  background-color: var(--button-secondary-bg-color);
+}
+
+button.secondary:hover {
+  background-color: var(--button-secondary-bg-color-hover);
+}
+
+button.danger {
+  background-color: var(--button-danger-bg-color);
+  color: var(--button-danger-color);
+}
+
+button.danger:hover {
+  background-color: var(--button-danger-bg-color-hover);
+}
