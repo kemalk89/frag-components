@@ -21,6 +21,8 @@ export namespace Components {
     }
     interface FcInput {
         "label": any;
+        "name": any;
+        "value": any;
     }
     interface FcModal {
         "actionButtons": ActionButton[];
@@ -44,6 +46,8 @@ export namespace Components {
     }
     interface FcTab {
         "tab": string;
+    }
+    interface FcTable {
     }
     interface FcTabs {
         "selectedTab": string;
@@ -112,6 +116,12 @@ declare global {
         prototype: HTMLFcTabElement;
         new (): HTMLFcTabElement;
     };
+    interface HTMLFcTableElement extends Components.FcTable, HTMLStencilElement {
+    }
+    var HTMLFcTableElement: {
+        prototype: HTMLFcTableElement;
+        new (): HTMLFcTableElement;
+    };
     interface HTMLFcTabsElement extends Components.FcTabs, HTMLStencilElement {
     }
     var HTMLFcTabsElement: {
@@ -146,6 +156,7 @@ declare global {
         "fc-swim-lane": HTMLFcSwimLaneElement;
         "fc-swim-lanes": HTMLFcSwimLanesElement;
         "fc-tab": HTMLFcTabElement;
+        "fc-table": HTMLFcTableElement;
         "fc-tabs": HTMLFcTabsElement;
         "fc-toast": HTMLFcToastElement;
         "fc-tooltip": HTMLFcTooltipElement;
@@ -163,6 +174,9 @@ declare namespace LocalJSX {
     }
     interface FcInput {
         "label"?: any;
+        "name"?: any;
+        "onInputChange"?: (event: CustomEvent<any>) => void;
+        "value"?: any;
     }
     interface FcModal {
         "actionButtons"?: ActionButton[];
@@ -188,6 +202,8 @@ declare namespace LocalJSX {
     interface FcTab {
         "tab"?: string;
     }
+    interface FcTable {
+    }
     interface FcTabs {
         "selectedTab"?: string;
         "tabs"?: Tab[];
@@ -209,6 +225,7 @@ declare namespace LocalJSX {
         "fc-swim-lane": FcSwimLane;
         "fc-swim-lanes": FcSwimLanes;
         "fc-tab": FcTab;
+        "fc-table": FcTable;
         "fc-tabs": FcTabs;
         "fc-toast": FcToast;
         "fc-tooltip": FcTooltip;
@@ -228,6 +245,7 @@ declare module "@stencil/core" {
             "fc-swim-lane": LocalJSX.FcSwimLane & JSXBase.HTMLAttributes<HTMLFcSwimLaneElement>;
             "fc-swim-lanes": LocalJSX.FcSwimLanes & JSXBase.HTMLAttributes<HTMLFcSwimLanesElement>;
             "fc-tab": LocalJSX.FcTab & JSXBase.HTMLAttributes<HTMLFcTabElement>;
+            "fc-table": LocalJSX.FcTable & JSXBase.HTMLAttributes<HTMLFcTableElement>;
             "fc-tabs": LocalJSX.FcTabs & JSXBase.HTMLAttributes<HTMLFcTabsElement>;
             "fc-toast": LocalJSX.FcToast & JSXBase.HTMLAttributes<HTMLFcToastElement>;
             "fc-tooltip": LocalJSX.FcTooltip & JSXBase.HTMLAttributes<HTMLFcTooltipElement>;

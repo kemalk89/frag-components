@@ -1,7 +1,6 @@
-import React from "react";
 import { FcIconButton } from "frag-components-react";
 
-type Entry = {
+export type TimesheetEntry = {
   id: string;
   date: string;
   description: string;
@@ -9,11 +8,12 @@ type Entry = {
 };
 
 type TimesheetTableProps = {
-  entries: Entry[];
-  onDelete: (entry: Entry) => void;
+  entries: TimesheetEntry[];
+  onDelete: (entry: TimesheetEntry) => void;
+  onEdit: (entry: TimesheetEntry) => void;
 };
 
-export default function TimesheetTable({ entries, onDelete }: TimesheetTableProps) {
+export default function TimesheetTable({ entries, onDelete, onEdit }: TimesheetTableProps) {
   return (
     <>
       <table className="fc-table">
@@ -35,7 +35,7 @@ export default function TimesheetTable({ entries, onDelete }: TimesheetTableProp
               <td>{e.effort}</td>
               <td>
                 <div className="fu-flex">
-                  <FcIconButton>
+                  <FcIconButton onClick={() => onEdit(e)}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
